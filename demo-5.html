@@ -62,8 +62,8 @@ body {
 </head>
 <body>
   <div class="device">
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
+    <div class="swiper-container"  style="-webkit-transform: translateY(30px);">
+      <div class="swiper-wrapper" id="isma">
         <div class="swiper-slide">
           <div class="slide-inner">
               <div class="title">Page Title</div>
@@ -85,6 +85,13 @@ body {
   <script src="build/js/idangerous.swiper-2.1.min.js"></script>
   <script src="build/js/idangerous.swiper.scrollbar.js"></script>
   <script>
+
+/*
+	  $('.swiper-container').on('movestart', function(e){
+		  console.log(e);
+	  });
+*/
+
 	  var mySwiper = new Swiper('.swiper-container', {
 		  scrollContainer:true,
 		  mousewheelControl : true,
@@ -103,14 +110,15 @@ body {
 	  var int = setInterval(function(){
 		  posPrev = - parseInt(element.css("-webkit-transform").replace('matrix(1, 0, 0, 1, 0, ', '').replace(')', ''));
 
+		  //console.log(document.getElementById('isma').style.webkitTransform);
+
 		  if (posPrev > 0) {
 
-
-		  if (posPrev != positionY) {
-			  $('.height').css('top', posPrev);
-			  positionY = posPrev;
-			  //console.log(element.css("-webkit-transform"));
-		  }
+			  if (posPrev != positionY) {
+				  //$('.height').css('top', posPrev);
+				  $('.height').css('-webkit-transform', element.css("-webkit-transform"));
+				  positionY = posPrev;
+			  }
 		  } else {
 
 			  $('.height').css('top', 0);
@@ -118,13 +126,6 @@ body {
 
 	  }, 10);
 
-/*  $('.swiper-container').on('scroll', function(){
-alert('a');
-  });*/
-
-/*  mySwiper.track( function(){
-	  console.log(this);
-  });*/
   </script>
 </body>
 </html>
