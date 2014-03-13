@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Demo</title>
-
-  <link rel="stylesheet" href="css/idangerous.swiper.css">
-  <link rel="stylesheet" href="css/idangerous.swiper.scrollbar.css">
+	<link rel="stylesheet" href="build/css/idangerous.swiper.css">
+	<link rel="stylesheet" href="build/css/idangerous.swiper.scrollbar.css">
   <style>
 /* Demo Syles */
 body {
@@ -56,16 +55,16 @@ body {
   </div>
   <div class="swiper-scrollbar"></div>
 
-  <script src="js/jquery-1.10.1.min.js"></script>
-  <script src="js/idangerous.swiper-2.1.min.js"></script>
-  <script src="js/idangerous.swiper.scrollbar.js"></script>
+  <script src="build/js/jquery-1.10.1.min.js"></script>
+  <script src="build/js/idangerous.swiper-2.1.min.js"></script>
+  <script src="build/js/idangerous.swiper.scrollbar.js"></script>
   <script>
   var mySwiper = new Swiper('.swiper-container',{
     //Enable Scrollbar
     scrollbar: {
       container :'.swiper-scrollbar',
-      hide: false,
-      draggable: false
+      hide: true,
+      draggable: true
     }
   })
   </script>
