@@ -115,7 +115,10 @@ body {
 		  if (posPrev > 0) {
 
 			  if (posPrev != positionY) {
-				  $('.height').animate({'top': posPrev}, 10);
+				  //$('.height').stop().animate({'top': posPrev}, 10);
+				  $('.height').css({
+					  'top': posPrev
+				  });
 				  //$('.height').css('-webkit-transform', element.css("-webkit-transform"));
 				  positionY = posPrev;
 			  }
