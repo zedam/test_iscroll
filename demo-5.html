@@ -110,12 +110,13 @@ body {
 	  var int = setInterval(function(){
 		  posPrev = - parseInt(element.css("-webkit-transform").replace('matrix(1, 0, 0, 1, 0, ', '').replace(')', ''));
 
-		  //console.log(document.getElementById('isma').style.webkitTransform);
+		  posPrev = - parseInt(element.css("-webkit-transform").replace('matrix(1, 0, 0, 1, 0, ', '').replace(')', '')) * $(window).height() / $('.slide-inner').height();
 
 		  if (posPrev > 0) {
 
 			  if (posPrev != positionY) {
 				  $('.height').stop().animate({'top': posPrev}, 10);
+
 				  /*$('.height').css({
 					  'top': posPrev
 				  });*/

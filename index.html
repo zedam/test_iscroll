@@ -197,7 +197,7 @@
 
 				});
 				myScroll.on('scroll', function(){
-					var positiony = (-this.y < $(window).height()) ? -this.y : $(window).height() - 40 ;
+					var positiony = (-this.y < $(window).height()) ? -this.y : $(window).height() ;
 				//	console.log($('#scroller').height(), -this.y, $(window).height());
 
 					$('#idheader').css('top', -this.y*$(window).height()/$('#scroller').height());
