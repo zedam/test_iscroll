@@ -102,10 +102,17 @@ body {
 	  var int = setInterval(function(){
 		  posPrev = parseInt(element.css("-webkit-transform").replace('matrix(1, 0, 0, 1, 0, ', '').replace(')', ''));
 
+		  if (posPrev > 0) {
+
+
 		  if (posPrev != positionY) {
 			  $('.height').css('top', -posPrev);
 			  positionY = posPrev;
 			  //console.log(element.css("-webkit-transform"));
+		  }
+		  } else {
+
+			  $('.height').css('top', 0);
 		  }
 
 	  }, 10);
