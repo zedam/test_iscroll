@@ -84,29 +84,31 @@ body {
   <script src="build/js/idangerous.swiper-2.1.min.js"></script>
   <script src="build/js/idangerous.swiper.scrollbar.js"></script>
   <script>
-  var mySwiper = new Swiper('.swiper-container', {
-    scrollContainer:true,
-    mousewheelControl : true,
-    mode:'vertical',
-    //Enable Scrollbar
-	onScrollbarDrag: function(){
-	console.log(this);
-	},
-    scrollbar: {
-      container :'.swiper-scrollbar',
-      hide: false,
-      draggable: true
-    }
-  });
+	  var mySwiper = new Swiper('.swiper-container', {
+		  scrollContainer:true,
+		  mousewheelControl : true,
+		  mode:'vertical',
+		  //Enable Scrollbar
+		  scrollbar: {
+			  container :'.swiper-scrollbar',
+			  hide: false,
+			  draggable: true
+		  }
+	  });
 
-  var element = $('.swiper-wrapper');
+	  var element = $('.swiper-wrapper'),
+		  positionY = 0;
 
-  var int = setInterval(function(){
-	  var transformX = element.css("-webkit-transform");
-	  console.log(element.css("-webkit-transform"), element.css("-webkit-transform").replace('matrix(1, 0, 0, 1, 0, ', '').replace(')', ''));
-	  $('.height').css('top', parseInt(element.css("-webkit-transform").replace('matrix(1, 0, 0, 1, 0, ', '').replace(')', '')));
+	  var int = setInterval(function(){
+		  posPrev = parseInt(element.css("-webkit-transform").replace('matrix(1, 0, 0, 1, 0, ', '').replace(')', ''));
 
-  }, 100);
+		  if (posPrev != positionY) {
+			  $('.height').css('top', -posPrev);
+			  positionY = posPrev;
+			  //console.log(element.css("-webkit-transform"));
+		  }
+
+	  }, 10);
 
 /*  $('.swiper-container').on('scroll', function(){
 alert('a');
