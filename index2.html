@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+		<meta name="author" content="www.frebsite.nl" />
+		<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+
+		<title>jQuery.mmenu - Examples</title>
+
+		<link type="text/css" rel="stylesheet" href="demo.css" />
+		<link type="text/css" rel="stylesheet" href="build/css/jquery.mmenu.all.css" />
+
+		<style type="text/css">
+
+			img {
+				clip-path: url(#clipPolygon);
+				position: absolute;
+				top: 10px;
+				-webkit-clip-path: polygon(200px 250px,400px 100px,300px 50px,0px 0px);
+			}
+			img + img {
+				top: 60px;
+			}
+
+
+
+
+		</style>
+
+	</head>
+	<body>
+	<img src="background@2x.jpg" width="640">
+	<img src="background@2x.jpg" width="640">
+
+	<svg width="0" height="0">
+		<clipPath id="clipPolygon">
+			<polygon points="200 250,400 100,300 50,0 0">
+			</polygon>
+		</clipPath>
+	</svg>
+	</body>
+</html>
